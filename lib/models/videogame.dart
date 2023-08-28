@@ -1,13 +1,13 @@
 class Videogame {
-  String id;
-  String name;
-  int votes;
+  final String id;
+  final String name;
+  final int votes;
 
   Videogame({required this.id, required this.name, required this.votes});
 
-  factory Videogame.fromJson(Map<String, dynamic> json) => Videogame(
-        id: json["id"],
-        name: json["name"],
-        votes: json["votes"],
+  factory Videogame.fromMap(Map<String, dynamic> map) => Videogame(
+        id: map["id"] as String? ?? 'no-id',
+        name: map["name"] as String? ?? 'no-name',
+        votes: map["votes"] as int? ?? 0,
       );
 }
